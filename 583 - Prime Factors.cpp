@@ -29,18 +29,22 @@ bool ngto(long long n){
 void factor(long long n){
 	
 	bool dem=0;
-	
+	if(ngto(n)==1) {
+		cout << n << " ";
+		return;
+	}
 	for(long long i=2;i<=n;i++){
-		if(ngto(n)==1) {
-			cout << n;
-			return;
-		}
 		if(n%i==0){
 			if(dem==1) cout << " x ";
 			cout << i ;
 			n=n/i;
 			dem=1;
 			i--;
+		}
+		if(i>sqrt(n)) {
+			if(dem==1) cout << " x ";
+			cout << n;
+			break;
 		}
 	}
 }

@@ -15,7 +15,6 @@ void xuly(string s){
 		else
 		if('A'<=s[i]&& s[i]<='Z') tmp+=char(s[i]-'A'+'a');
 		else {
-		//	cout << tmp << "-";
 			if(!tmp.empty())m[tmp]=true;
 			tmp.clear();
 		}
@@ -31,11 +30,9 @@ int main(){
 	}
 	
 	map<string,bool>::iterator it;
-//	it=m.end(); 
 
-//	cout << it->first;
-	int i=1;
-	int ss=m.size();
+	ll i=1;
+	ll ss=m.size();
 	for(it=m.begin();it!=m.end();it++){
 		cout << it->first;
 		if(i!=ss){
@@ -43,10 +40,5 @@ int main(){
 			i++;
 		}
 	}
-	
-	
-	
-	
-	
-	
+
 }

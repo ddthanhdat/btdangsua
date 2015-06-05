@@ -22,7 +22,7 @@ int main(){
 		for(ll j=0;j<m;j++){
 			cin >> a;
 			if(!ma[a]) dem++;
-			else ma[a]=true;
+			ma[a]=true;
 		}
 		cout << dem;
 	//	if(i!=n-1) cout << endl;

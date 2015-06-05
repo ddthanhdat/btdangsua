@@ -24,7 +24,7 @@ int main(){
 			if(!ma[a]) dem++;
 			ma[a]=true;
 		}
-		cout << dem;
+		cout << dem << endl;
 	//	if(i!=n-1) cout << endl;
 		ma.clear();
 	}

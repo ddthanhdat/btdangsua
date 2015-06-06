@@ -1,0 +1,55 @@
+#include <iostream>
+#include <map>
+#include <algorithm>
+#include <cstdio>
+#include <queue>
+#include <vector>
+#define ll long long
+using namespace std;
+
+pair<int,int> p;
+map<long long,bool> m;
+queue<long long> q;
+vector< pair<int,int> > v;
+
+bool cmp(pair<int,int> a, pair<int,int> b){
+	if(a.second==b.second){
+		if(a.first%2==0 && b.first%2==0) return a.first<b.first;
+		
+		if(a.first%2!=0 && b.first%2!=0) return a.first>b.first;
+		else { 
+		return a.first%2 > b.first%2;
+		}
+		
+	}
+	else{
+		return a.second<b.second;
+	}
+}
+
+
+int main(){
+	freopen("i.txt","r",stdin);
+	freopen("o.txt","w",stdout);
+	int n,m;
+	int a;
+	while(cin >> n>> m){
+		if(!n&& !m) {
+			cout << "0 0";
+			break;
+		}
+		for(int i=1;i<=n;i++){
+			cin >> a;
+			v.push_back(make_pair(a,a%m));
+		}
+		// sort
+		
+		sort(v.begin(),v.end(),cmp);
+		
+		// cout 
+		cout << n << " " <<m << endl; 
+		for(int i=0;i<v.size();i++){
+			cout << v[i].first << endl;
+		}
+	}
+}

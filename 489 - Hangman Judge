@@ -1,0 +1,49 @@
+#include <iostream>
+#include <algorithm>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <vector>
+#include <map>
+#define ll long long
+using namespace std;
+map<char,bool> m;
+
+int main(){
+//	freopen("ip.txt","r",stdin);
+	ll n, j=1;
+	while(cin>> n){
+		if(n==-1) break;
+		string s;
+		cin >> s;
+		for(ll i=0;i<s.size();i++){
+			m[s[i]]=1;
+		}
+		string tmp;
+		cin >> tmp;
+		bool baocao;
+		for(ll i=0;i<tmp.size();i++){
+			m[tmp[i]]=0;
+			baocao=0;
+			for(ll i=0;i<s.size();i++)
+				if(m[s[i]]==1){
+					baocao=1;
+					break;
+				}
+			if(baocao==0) {
+				cout << "You win." << endl;
+				break;
+			}
+		}
+		if (baocao!=0)
+			if(tmp.size()>7) cout << "You lose."<<endl;
+			else
+				for(ll i=0;i<s.size();i++)
+					if(m[s[i]]==1){
+						cout << "You chickened out." << endl;
+						break;
+					}
+		
+		m.clear();
+	}
+}
